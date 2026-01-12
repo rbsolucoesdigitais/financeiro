@@ -280,7 +280,7 @@ tr.drag-over-bottom {
 /* ===== SCROLL DA LISTA ===== */
 
 .table-wrapper {
-    max-height: 45vh;
+    max-height: 25vh;
     overflow-y: auto;
 }
 .table-wrapper {
@@ -337,5 +337,6 @@ tr.vencimento-vencido > td {
     color: #ff0000;
     font-weight: bold;
 }
+
 
 
