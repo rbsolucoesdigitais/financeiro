@@ -1,5 +1,5 @@
 let contas = [];
-const somPago = new Audio("./sounds/cash.mp3");
+const somPago = new Audio("./assets/sounds/cash.mp3");
 somPago.volume = 0.6; // ajuste se quiser (0.0 a 1.0)
 
 
@@ -23,8 +23,15 @@ function atualizarTitulo() {
         "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"
     ];
     const hoje = new Date();
-    document.getElementById("titulo").innerText =
-        `Controle Financeiro - ${meses[hoje.getMonth()]} de ${hoje.getFullYear()}`;
+    document.getElementById("titulo").innerHTML = `
+    <div class="d-flex align-items-center justify-content-center gap-2">
+        <img src="assets/img/logo-02.png" alt="WPay" id="logo-titulo">
+        <span>
+            Controle Financeiro - ${meses[hoje.getMonth()]} de ${hoje.getFullYear()}
+        </span>
+    </div>
+`;
+
 }
 
 /* ===== LOCAL STORAGE ===== */
@@ -169,6 +176,17 @@ function toggleStatus(index) {
     salvarLocalStorage();
     renderizar();
 }
+
+pago.addEventListener("click", () => {
+  saldo.classList.remove("pulse");
+  void saldo.offsetWidth; // força reflow
+  saldo.classList.add("pulse");
+
+  setTimeout(() => {
+    saldo.classList.remove("pulse");
+  }, 2000);
+});
+
 
 
 /* ===== EDITAR ===== */
@@ -341,6 +359,3 @@ window.onload = () => {
     atualizarTitulo();
     carregarLocalStorage();
 };
-
-
-
