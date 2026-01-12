@@ -25,7 +25,7 @@ function atualizarTitulo() {
     const hoje = new Date();
     document.getElementById("titulo").innerHTML = `
     <div class="d-flex align-items-center justify-content-center gap-2">
-        <img src="assets/img/logo-02.png" alt="WPay" id="logo-titulo">
+        <img src="./assets/img/logo-02.png" alt="WPay" id="logo-titulo">
         <span>
             Controle Financeiro - ${meses[hoje.getMonth()]} de ${hoje.getFullYear()}
         </span>
@@ -359,3 +359,4 @@ window.onload = () => {
     atualizarTitulo();
     carregarLocalStorage();
 };
+
