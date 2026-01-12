@@ -1,6 +1,6 @@
 alert('teste');
 let contas = [];
-const somPago = new Audio("./assets/sounds/cash.mp3");
+const somPago = new Audio("../assets/sounds/cash.mp3");
 somPago.volume = 0.6; // ajuste se quiser (0.0 a 1.0)
 
 
@@ -360,6 +360,7 @@ window.onload = () => {
     atualizarTitulo();
     carregarLocalStorage();
 };
+
 
 
 
