@@ -1,4 +1,3 @@
-alert('teste');
 let contas = [];
 const somPago = new Audio("../sounds/cash.mp3");
 somPago.volume = 0.6; // ajuste se quiser (0.0 a 1.0)
