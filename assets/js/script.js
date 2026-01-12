@@ -1,4 +1,7 @@
 let contas = [];
+const somPago = new Audio("./assets/sounds/cash.mp3");
+somPago.volume = 0.6; // ajuste se quiser (0.0 a 1.0)
+
 
 /* ===== CONTROLE DE ORDENAÇÃO ===== */
 let ordemAtual = {
@@ -153,10 +156,20 @@ function formatarMoeda(valor) {
 
 /* ===== STATUS ===== */
 function toggleStatus(index) {
+    const estavaPago = contas[index].pago;
+
     contas[index].pago = !contas[index].pago;
+
+    // 🔊 Toca o som APENAS quando marcar como pago
+    if (!estavaPago && contas[index].pago) {
+        somPago.currentTime = 0; // reinicia se tocar rápido várias vezes
+        somPago.play().catch(() => {});
+    }
+
     salvarLocalStorage();
     renderizar();
 }
+
 
 /* ===== EDITAR ===== */
 function editarConta(index) {
