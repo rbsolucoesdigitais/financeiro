@@ -280,11 +280,11 @@ tr.drag-over-bottom {
 /* ===== SCROLL DA LISTA ===== */
 
 .table-wrapper {
-    max-height: 55vh;
+    max-height: 45vh;
     overflow-y: auto;
 }
 .table-wrapper {
-    min-height: 520px; /* ajuste conforme o layout */
+    min-height: 400px; /* ajuste conforme o layout */
     display: flex;
     flex-direction: column;
 }
@@ -337,4 +337,5 @@ tr.vencimento-vencido > td {
     color: #ff0000;
     font-weight: bold;
 }
+
 
