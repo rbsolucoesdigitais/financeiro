@@ -1,0 +1,340 @@
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    position: absolute;
+    left: 300px;
+    width: 700px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+}
+#card-title{
+    background-color: #3f5268 !important;
+}
+.card {
+    min-height: 55vh;
+}
+
+.add {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#btn-adicionar{
+    background-color: #67ad5d;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.add input {
+    flex: 1;
+    padding: 8px;
+}
+
+input#vencimento,#descricao,#valor{
+    height: 60px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                rgba(0, 0, 0, 0.3) 0px 3px 7px -3px inset;
+}
+
+.add button {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    height: 90%;
+    min-height: 90% ;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.pendente {
+    background: red;
+}
+
+.pago {
+    background: green;
+}
+
+#card-main{
+    height: 100px !important;
+}
+
+.alert{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.total-badge{
+    background-color: #f7cc7e;
+}
+.positive-badge{
+    background-color: #8edb8e;
+}
+.negative-badge{
+    background-color: #fd8ea7;
+}
+
+.alert strong{
+    font-size: 20px;
+    color: #35353a;
+}
+
+button.acao {
+    margin: 0 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.resumo {
+    margin-top: 20px;
+}
+
+.resumo p {
+    font-weight: bold;
+}
+
+.saldo span {
+    color: red;
+}
+
+.status {
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+    height: 40px !important;
+    border-radius: 7px !important;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+    color: #ffffff;
+}
+
+.status.pendente {
+    background-color: #dc3545;
+}
+
+.status.pago {
+    background-color: #198754;
+}
+
+.fa-toggle-on,.fa-toggle-off{
+    width: 10px;
+    font-size: 24px;
+    color: aliceblue;
+}
+
+.status {
+    position: relative;
+    padding-right: 36px; /* espaço reservado para o ícone */
+}
+
+.status-icon {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* clique continua na div */
+}
+
+
+
+.btn-acao {
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn-acao:hover {
+    transform: scale(1.2);
+}
+
+.drag {
+    cursor: grab;
+    font-weight: bold;
+    color: #6c757d;
+    margin-right: 8px;
+}
+
+.drag:active {
+    cursor: grabbing;
+}
+
+tr.dragging {
+    opacity: 0.4;
+}
+
+input {
+    text-transform: uppercase;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+.status {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: auto;
+}
+
+.status.pendente {
+    background-color: #dc3545;
+}
+
+.status.pago {
+    background-color: #198754;
+}
+
+.btn-acao {
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn-acao:hover {
+    transform: scale(1.2);
+}
+
+.drag {
+    cursor: grab;
+    font-weight: bold;
+    color: #6c757d;
+    margin-right: 8px;
+}
+
+.drag:active {
+    cursor: grabbing;
+}
+
+tr.dragging {
+    opacity: 0.4;
+}
+
+/* ===== DRAG & DROP MELHORADO ===== */
+
+.drag-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.drag-handle {
+    width: 20px;
+    text-align: center;
+    cursor: grab;
+    font-weight: bold;
+    color: #6c757d;
+    user-select: none;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+tr.dragging {
+    opacity: 0.4;
+}
+
+tr.drag-over-top {
+    border-top: 3px solid #0d6efd;
+}
+
+tr.drag-over-bottom {
+    border-bottom: 3px solid #0d6efd;
+}
+
+/* ===== INDICADOR DE POSIÇÃO (DROP LINE) ===== */
+
+.drop-indicator {
+    position: absolute;
+    height: 3px;
+    background-color: #0d6efd;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* ===== SCROLL DA LISTA ===== */
+
+.table-wrapper {
+    max-height: 55vh;
+    overflow-y: auto;
+}
+.table-wrapper {
+    min-height: 520px; /* ajuste conforme o layout */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.table-wrapper::-webkit-scrollbar {
+    width: 14px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #0d6efd;
+    border-radius: 8px;
+    border: 3px solid #f1f1f1;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #084298;
+}
+
+.table-wrapper {
+    scrollbar-width: thick;
+    scrollbar-color: #808ea3 #f1f1f1;
+}
+
+
+/* ===== CORES DE VENCIMENTO (FORÇADAS NA LINHA INTEIRA) ===== */
+
+tr.vencimento-alerta > td {
+    background-color: #fff3cd !important; /* amarelo */
+    border-bottom: 2px solid #ffa700 !important;
+    color: #ffa700;
+    font-weight: bold;
+}
+
+tr.vencimento-hoje > td {
+    background-color: #ffe5b4 !important; /* laranja */
+    border-bottom: 2px solid #ff7601 !important;
+    color: #ff7601;
+    font-weight: bold;
+}
+
+tr.vencimento-vencido > td {
+    background-color: #f8d7da !important; /* vermelho */
+    border-bottom: 2px solid #ff0000 !important;
+    color: #ff0000;
+    font-weight: bold;
+}
+
